@@ -1,0 +1,69 @@
+MOD_NAME=Elerium Batteries
+AUTHOR=swfdelicious
+DESCRIPTION=TBD
+UPK_FILE=XComGame.upk
+OBJECT=XComProjectile_FragGrenade.InitProjectile:AUTO
+
+[REPLACEMENT_CODE]
+/*(0x0000/0x0000)*/ 0B 
+/*(0x0001/0x0001)*/ 0B 
+/*(0x0002/0x0002)*/ 14 2D 00 <.bPreviewOnly> 28 
+/*(0x000E/0x000A)*/ 14 2D 00 <.bAnimNotify_FireWeaponCustom_DoDamage> 27 
+/*(0x001A/0x0012)*/ 1C <XComProjectile.InitProjectile> 00 <.Direction> 2D 00 <.bPreviewOnly> 2D 00 <.bAnimNotify_FireWeaponCustom_DoDamage> 16 
+/*(0x0041/0x0029)*/ 07 [@label_0x0090] 81 2D 00 <.bPreviewOnly> 16 
+/*(0x0050/0x0034)*/ 	14 2D 01 <@m_bUsePrecomputedTrail> 27 
+/*(0x005C/0x003C)*/ 	0F 01 <@m_fPrecomputedPathTime> 1E <%f 0> 
+/*(0x006B/0x0047)*/ 	6F 82 24 00 16 
+/*(0x0070/0x004C)*/ 	19 01 <XComProjectile.Mesh> [@] <NullRef> 00 ( 1C <Engine.PrimitiveComponent.SetBlockRigidBody> 27 16 ) 
+/*(0x0090/0x0060)*/ [#label_0x0090]
+/*(0x0090/0x0060)*/ 07 [@label_0x0682] 9A 38 3A 01 <Engine.Actor.Role> 38 3A 24 03 16 
+/*(0x00A4/0x0070)*/ 	07 [@label_0x013F] 77 01 <XComProjectile.m_kFiredFromUnit> 2A 16 
+/*(0x00B3/0x007B)*/ 		0F 00 <.kFireAction> 2E <Class.XGAction_Fire> 19 01 <XComProjectile.m_kFiredFromUnit> [@] <XGUnitNativeBase.GetAction.ReturnValue> 00 ( 1B <GetAction> 16 ) 
+/*(0x00E5/0x009D)*/ 		0F 00 <.UnitCurrentWeapon> 19 2E <Class.XComWeapon> 01 <Engine.Actor.Owner> [@] <XComWeapon.m_kGameWeapon> 00 ( 01 <XComWeapon.m_kGameWeapon> ) 
+/*(0x0116/0x00BA)*/ 		0F 01 <XComProjectile.WeaponType> 19 00 <.UnitCurrentWeapon> [@] <XGItem.GameplayType.ReturnValue> 00 ( 1B <GameplayType> 16 ) 
+/*(0x013F/0x00D7)*/ 	[#label_0x013F]
+/*(0x013F/0x00D7)*/ 	0F 01 <XComProjectile.m_iTurnToExplode> 1D <%i -1> 
+/*(0x014E/0x00E2)*/ 	07 [@label_0x061E] 81 2D 00 <.bPreviewOnly> 16 
+/*(0x015D/0x00ED)*/ 		07 [@label_0x0579] 82 77 00 <.kFireAction> 2A 16 18 [@] ( 77 19 00 <.kFireAction> [@] <XGAction_Fire.m_kShot> 00 ( 01 <XGAction_Fire.m_kShot> ) 2A 16 16 ) 
+/*(0x0192/0x0112)*/ 			07 [@label_0x0388] 9A 19 19 00 <.kFireAction> [@] <XGAction_Fire.m_kShot> 00 ( 01 <XGAction_Fire.m_kShot> ) [@] <XGAbility.iType> 00 ( 01 <XGAbility.iType> ) 2C 38 16 
+/*(0x01CC/0x0138)*/ 				07 [@label_0x022E] 97 9C 1A 2C 7B 35 <XGTacticalGameCoreNativeBase.TCharacter.aUpgrades> <XGTacticalGameCoreNativeBase.TCharacter> 00 00 19 19 01 <XComProjectile.m_kFiredFromUnit> [@] <XGUnitNativeBase.m_kCharacter> 00 ( 01 <XGUnitNativeBase.m_kCharacter> ) [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 2C 80 16 25 16 
+/*(0x021F/0x016F)*/ 					0F 01 <XComProjectile.m_iTurnToExplode> 2C 03 
+/*(0x022B/0x0177)*/ 					06 [@label_0x023A] 
+/*(0x022E/0x017A)*/ 				[#label_0x022E]
+/*(0x022E/0x017A)*/ 				0F 01 <XComProjectile.m_iTurnToExplode> 2C 02 
+/*(0x023A/0x0182)*/ 				[#label_0x023A]
+/*(0x023A/0x0182)*/ 				0F 01 <XComProjectile.m_iTurnToExplode> 92 19 19 2E <Class.XComTacticalGRI> 19 12 20 <Engine.Engine> [@] <Engine.Engine.GetCurrentWorldInfo.ReturnValue> 00 ( 1C <Engine.Engine.GetCurrentWorldInfo> 16 ) [@] <Engine.WorldInfo.GRI> 00 ( 01 <Engine.WorldInfo.GRI> ) [@] <XComTacticalGRI.m_kBattle> 00 ( 01 <XComTacticalGRI.m_kBattle> ) [@] <XGBattle.m_iPlayerTurn> 00 ( 01 <XGBattle.m_iPlayerTurn> ) 90 19 19 2E <Class.XComTacticalGRI> 19 12 20 <Engine.Engine> [@] <Engine.Engine.GetCurrentWorldInfo.ReturnValue> 00 ( 1C <Engine.Engine.GetCurrentWorldInfo> 16 ) [@] <Engine.WorldInfo.GRI> 00 ( 01 <Engine.WorldInfo.GRI> ) [@] <XComTacticalGRI.m_kBattle> 00 ( 01 <XComTacticalGRI.m_kBattle> ) [@] <XGBattle.m_iNumPlayers> 00 ( 01 <XGBattle.m_iNumPlayers> ) 01 <XComProjectile.m_iTurnToExplode> 16 16 
+/*(0x031F/0x020F)*/ 				14 2D 01 <@m_bShouldNotCauseDamageFlinch> 27 
+/*(0x032B/0x0217)*/ 				14 2D 01 <@m_bBattleScanner> 27 
+/*(0x0337/0x021F)*/ 				07 [@label_0x0385] 81 19 01 <XComProjectile.m_kFiredFromUnit> [@] <Engine.Actor.IsTeamFriendly.ReturnValue> 00 ( 1B <IsTeamFriendly> 19 1C <Engine.Actor.GetALocalPlayerController> 16 [@] <Engine.Actor.m_eTeam> 00 ( 01 <Engine.Actor.m_eTeam> ) 16 ) 16 
+/*(0x037A/0x024E)*/ 					1B <SetHidden> 27 16 
+/*(0x0385/0x0259)*/ 				[#label_0x0385]
+/*(0x0385/0x0259)*/ 				06 [@label_0x0579] 
+/*(0x0388/0x025C)*/ 			[#label_0x0388]
+/*(0x0388/0x025C)*/ 			07 [@label_0x0449] 84 84 9A 19 19 00 <.kFireAction> [@] <XGAction_Fire.m_kShot> 00 ( 01 <XGAction_Fire.m_kShot> ) [@] <XGAbility.iType> 00 ( 01 <XGAbility.iType> ) 2C 11 16 18 [@] ( 9A 19 19 00 <.kFireAction> [@] <XGAction_Fire.m_kShot> 00 ( 01 <XGAction_Fire.m_kShot> ) [@] <XGAbility.iType> 00 ( 01 <XGAbility.iType> ) 2C 4C 16 16 ) 18 [@] ( 9A 19 19 00 <.kFireAction> [@] <XGAction_Fire.m_kShot> 00 ( 01 <XGAction_Fire.m_kShot> ) [@] <XGAbility.iType> 00 ( 01 <XGAbility.iType> ) 2C 4D 16 16 ) 
+/*(0x043A/0x02D2)*/ 				14 2D 01 <@m_bShouldNotCauseDamageFlinch> 27 
+/*(0x0446/0x02DA)*/ 				06 [@label_0x0579] 
+/*(0x0449/0x02DD)*/ 			[#label_0x0449]
+/*(0x0449/0x02DD)*/ 			07 [@label_0x0579] 9A 19 19 00 <.kFireAction> [@] <XGAction_Fire.m_kShot> 00 ( 01 <XGAction_Fire.m_kShot> ) [@] <XGAbility.iType> 00 ( 01 <XGAbility.iType> ) 2C 4B 16 
+/*(0x0483/0x0303)*/ 				0F 01 <XComProjectile.m_iTurnToExplode> 92 19 19 2E <Class.XComTacticalGRI> 19 12 20 <Engine.Engine> [@] <Engine.Engine.GetCurrentWorldInfo.ReturnValue> 00 ( 1C <Engine.Engine.GetCurrentWorldInfo> 16 ) [@] <Engine.WorldInfo.GRI> 00 ( 01 <Engine.WorldInfo.GRI> ) [@] <XComTacticalGRI.m_kBattle> 00 ( 01 <XComTacticalGRI.m_kBattle> ) [@] <XGBattle.m_iPlayerTurn> 00 ( 01 <XGBattle.m_iPlayerTurn> ) 90 19 19 2E <Class.XComTacticalGRI> 19 12 20 <Engine.Engine> [@] <Engine.Engine.GetCurrentWorldInfo.ReturnValue> 00 ( 1C <Engine.Engine.GetCurrentWorldInfo> 16 ) [@] <Engine.WorldInfo.GRI> 00 ( 01 <Engine.WorldInfo.GRI> ) [@] <XComTacticalGRI.m_kBattle> 00 ( 01 <XComTacticalGRI.m_kBattle> ) [@] <XGBattle.m_iNumPlayers> 00 ( 01 <XGBattle.m_iNumPlayers> ) 2C 02 16 16 
+/*(0x0561/0x038D)*/ 				14 2D 01 <@m_bShouldNotCauseDamageFlinch> 27 
+/*(0x056D/0x0395)*/ 				14 2D 01 <@m_bMimicBeacon> 27 
+/*(0x0579/0x039D)*/ 		[#label_0x0579]
+/*(0x0579/0x039D)*/ 		07 [@label_0x05CD] 9A 38 3A 19 00 <.UnitCurrentWeapon> [@] <XGItem.GameplayType.ReturnValue> 00 ( 1B <GameplayType> 16 ) 38 3A 24 1B 16 
+/*(0x05A3/0x03BF)*/ 			07 [@label_0x05BE] 72 00 <.kFireAction> 2A 16 
+/*(0x05B2/0x03CA)*/ 				1B <InitNoAction> 2C 1B 16 
+/*(0x05BE/0x03D6)*/ 			[#label_0x05BE]
+/*(0x05BE/0x03D6)*/ 			14 2D 01 <XComProjectile.m_bProximityMine> 27 
+/*(0x05CA/0x03DE)*/ 			06 [@label_0x061E] 
+/*(0x05CD/0x03E1)*/ 		[#label_0x05CD]
+/*(0x05CD/0x03E1)*/ 		07 [@label_0x061E] 9A 38 3A 19 00 <.UnitCurrentWeapon> [@] <XGItem.GameplayType.ReturnValue> 00 ( 1B <GameplayType> 16 ) 38 3A 24 58 16 
+/*(0x05F7/0x0403)*/ 			07 [@label_0x0612] 72 00 <.kFireAction> 2A 16 
+/*(0x0606/0x040E)*/ 				1B <InitNoAction> 2C 58 16 
+/*(0x0612/0x041A)*/ 			[#label_0x0612]
+/*(0x0612/0x041A)*/ 			14 2D 01 <@m_bMimicBeacon> 27 
+/*(0x061E/0x0422)*/ 	[#label_0x061E]
+/*(0x061E/0x0422)*/ 	19 01 <XComProjectile.Mesh> [@] <NullRef> 00 ( 1C <Engine.PrimitiveComponent.AddImpulse> 01 <Engine.Actor.Velocity> 23 <%f 0> <%f 0> <%f 0> 4A 27 16 ) 
+/*(0x0655/0x0449)*/ 	19 01 <XComProjectile.Mesh> [@] <NullRef> 00 ( 1C <Engine.PrimitiveComponent.AddTorque> 23 <%f 10> <%f 10> <%f 10> 4A 16 ) 
+/*(0x0682/0x046A)*/ [#label_0x0682]
+/*(0x0682/0x046A)*/ 04 0B 
+/*(0x0684/0x046C)*/ 53 

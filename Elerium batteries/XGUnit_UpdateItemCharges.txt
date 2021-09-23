@@ -1,0 +1,173 @@
+MOD_NAME=Elerium Batteries
+AUTHOR=swfdelicious
+DESCRIPTION=TBD
+UPK_FILE=XComGame.upk
+OBJECT=XGUnit.UpdateItemCharges:AUTO
+
+[REPLACEMENT_CODE]
+/*(0x0000/0x0000)*/ 1B <SetGhostCharges> 2C 03 16 
+/*(0x000C/0x000C)*/ 07 [@label_0x0107] 97 19 1B <GetInventory> 16 [@] <XGInventory.GetNumItems.ReturnValue> 00 ( 1B <GetNumItems> 24 45 16 ) 25 16 
+/*(0x0034/0x0030)*/ 	0F 01 <XGUnitNativeBase.m_iMediKitCharges> 19 1B <GetInventory> 16 [@] <XGInventory.GetNumItems.ReturnValue> 00 ( 1B <GetNumItems> 24 45 16 ) 
+/*(0x0060/0x0054)*/ 	07 [@label_0x00B2] 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 35 16 ) 
+/*(0x0085/0x0075)*/ 		A1 01 <XGUnitNativeBase.m_iMediKitCharges> 19 1B <GetInventory> 16 [@] <XGInventory.GetNumItems.ReturnValue> 00 ( 1B <GetNumItems> 24 45 16 ) 16 
+/*(0x00B2/0x009A)*/ 	[#label_0x00B2]
+/*(0x00B2/0x009A)*/ 	07 [@label_0x0107] 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 30 16 ) 
+/*(0x00D7/0x00BB)*/ 		A1 01 <XGUnitNativeBase.m_iMediKitCharges> 93 19 1B <GetInventory> 16 [@] <XGInventory.GetNumItems.ReturnValue> 00 ( 1B <GetNumItems> 24 45 16 ) 26 16 16 
+/*(0x0107/0x00E3)*/ [#label_0x0107]
+/*(0x0107/0x00E3)*/ 07 [@label_0x021C] 97 19 1B <GetInventory> 16 [@] <XGInventory.GetNumItems.ReturnValue> 00 ( 1B <GetNumItems> 24 49 16 ) 25 16 
+/*(0x012F/0x0107)*/ 	1B <SetArcThrowerCharges> 90 19 1B <GetInventory> 16 [@] <XGInventory.GetNumItems.ReturnValue> 00 ( 1B <GetNumItems> 24 49 16 ) 26 16 16 
+/*(0x015E/0x0132)*/ 	07 [@label_0x01BB] 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 35 16 ) 
+/*(0x0183/0x0153)*/ 		1B <SetArcThrowerCharges> 92 1B <GetArcThrowerCharges> 16 19 1B <GetInventory> 16 [@] <XGInventory.GetNumItems.ReturnValue> 00 ( 1B <GetNumItems> 24 49 16 ) 16 16 
+/*(0x01BB/0x0187)*/ 	[#label_0x01BB]
+/*(0x01BB/0x0187)*/ 	07 [@label_0x021C] 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 66 16 ) 
+/*(0x01E0/0x01A8)*/ 		1B <SetArcThrowerCharges> 92 1B <GetArcThrowerCharges> 16 90 19 1B <GetInventory> 16 [@] <XGInventory.GetNumItems.ReturnValue> 00 ( 1B <GetNumItems> 24 49 16 ) 2C 02 16 16 16 
+/*(0x021C/0x01E0)*/ [#label_0x021C]
+/*(0x021C/0x01E0)*/ 1B <SetMimicBeaconCharges> 90 19 1B <GetInventory> 16 [@] <XGInventory.GetNumItems.ReturnValue> 00 ( 1B <GetNumItems> 24 58 16 ) 45 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 5B 16 ) [@] ( 2C 02 ) [@] ( 26 ) 16 16 
+/*(0x0274/0x0230)*/ 1B <SetFragGrenades> 90 19 1B <GetInventory> 16 [@] <XGInventory.GetNumItems.ReturnValue> 00 ( 1B <GetNumItems> 24 51 16 ) 45 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 18 16 ) [@] ( 2C 02 ) [@] ( 26 ) 16 16 
+/*(0x02CC/0x0280)*/ 1B <SetFlashBangs> 90 19 1B <GetInventory> 16 [@] <XGInventory.GetNumItems.ReturnValue> 00 ( 1B <GetNumItems> 24 53 16 ) 45 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 5B 16 ) [@] ( 2C 02 ) [@] ( 26 ) 16 16 
+/*(0x0324/0x02D0)*/ 1B <SetAlienGrenades> 90 19 1B <GetInventory> 16 [@] <XGInventory.GetNumItems.ReturnValue> 00 ( 1B <GetNumItems> 24 54 16 ) 45 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 18 16 ) [@] ( 2C 02 ) [@] ( 26 ) 16 16 
+/*(0x037C/0x0320)*/ 1B <SetGhostGrenades> 90 19 1B <GetInventory> 16 [@] <XGInventory.GetNumItems.ReturnValue> 00 ( 1B <GetNumItems> 24 55 16 ) 45 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 5B 16 ) [@] ( 26 ) [@] ( 26 ) 16 16 
+/*(0x03D3/0x036F)*/ 1B <SetGasGrenades> 90 19 1B <GetInventory> 16 [@] <XGInventory.GetNumItems.ReturnValue> 00 ( 1B <GetNumItems> 24 56 16 ) 45 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 5B 16 ) [@] ( 2C 02 ) [@] ( 26 ) 16 16 
+/*(0x042B/0x03BF)*/ 1B <SetNeedleGrenades> 90 19 1B <GetInventory> 16 [@] <XGInventory.GetNumItems.ReturnValue> 00 ( 1B <GetNumItems> 24 57 16 ) 45 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 18 16 ) [@] ( 2C 02 ) [@] ( 26 ) 16 16 
+/*(0x0483/0x040F)*/ 07 [@label_0x0630] 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 35 16 ) 
+/*(0x04A8/0x0430)*/ 	1B <SetFragGrenades> 92 1B <GetFragGrenades> 16 19 1B <GetInventory> 16 [@] <XGInventory.GetNumItems.ReturnValue> 00 ( 1B <GetNumItems> 24 51 16 ) 16 16 
+/*(0x04E0/0x0464)*/ 	1B <SetFlashBangs> 92 1B <GetFlashBangs> 16 19 1B <GetInventory> 16 [@] <XGInventory.GetNumItems.ReturnValue> 00 ( 1B <GetNumItems> 24 53 16 ) 16 16 
+/*(0x0518/0x0498)*/ 	1B <SetAlienGrenades> 92 1B <GetAlienGrenades> 16 19 1B <GetInventory> 16 [@] <XGInventory.GetNumItems.ReturnValue> 00 ( 1B <GetNumItems> 24 54 16 ) 16 16 
+/*(0x0550/0x04CC)*/ 	1B <SetGhostGrenades> 92 1B <GetGhostGrenades> 16 19 1B <GetInventory> 16 [@] <XGInventory.GetNumItems.ReturnValue> 00 ( 1B <GetNumItems> 24 FF 16 ) 16 16 
+/*(0x0588/0x0500)*/ 	1B <SetGasGrenades> 92 1B <GetGasGrenades> 16 19 1B <GetInventory> 16 [@] <XGInventory.GetNumItems.ReturnValue> 00 ( 1B <GetNumItems> 24 56 16 ) 16 16 
+/*(0x05C0/0x0534)*/ 	1B <SetNeedleGrenades> 92 1B <GetNeedleGrenades> 16 19 1B <GetInventory> 16 [@] <XGInventory.GetNumItems.ReturnValue> 00 ( 1B <GetNumItems> 24 57 16 ) 16 16 
+/*(0x05F8/0x0568)*/ 	1B <SetMimicBeaconCharges> 92 1B <GetMimicBeaconCharges> 16 19 1B <GetInventory> 16 [@] <XGInventory.GetNumItems.ReturnValue> 00 ( 1B <GetNumItems> 24 58 16 ) 16 16 
+/*(0x0630/0x059C)*/ [#label_0x0630]
+/*(0x0630/0x059C)*/ 07 [@label_0x06E2] 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 16 16 ) 
+/*(0x0655/0x05BD)*/ 	1B <SetShredderRockets> 9C 1A 2C 16 35 <XGTacticalGameCoreNativeBase.TCharacter.aUpgrades> <XGTacticalGameCoreNativeBase.TCharacter> 00 00 19 01 <XGUnitNativeBase.m_kCharacter> [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 26 16 16 
+/*(0x0696/0x05EA)*/ 	1B <SetShredderRockets> 92 01 <XGUnitNativeBase.m_iShredderRockets> 95 1A 2C 16 35 <XGTacticalGameCoreNativeBase.TCharacter.aUpgrades> <XGTacticalGameCoreNativeBase.TCharacter> 00 00 19 01 <XGUnitNativeBase.m_kCharacter> [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 26 16 16 16 
+/*(0x06E2/0x061E)*/ [#label_0x06E2]
+/*(0x06E2/0x061E)*/ 07 [@label_0x07B0] 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 12 16 ) 
+/*(0x0707/0x063F)*/ 	1B <SetRockets> 26 16 
+/*(0x0712/0x064A)*/ 	07 [@label_0x0743] 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 5C 16 ) 
+/*(0x0737/0x066B)*/ 		1B <SetRockets> 2C 02 16 
+/*(0x0743/0x0677)*/ 	[#label_0x0743]
+/*(0x0743/0x0677)*/ 	07 [@label_0x07B0] 12 20 <Class.XGTacticalGameCoreNativeBase> [@] <XGTacticalGameCoreNativeBase.TInventoryHasItemType.ReturnValue> 00 ( 1C <XGTacticalGameCoreNativeBase.TInventoryHasItemType> 35 <XGTacticalGameCoreNativeBase.TCharacter.kInventory> <XGTacticalGameCoreNativeBase.TCharacter> 00 01 19 1B <GetCharacter> 16 [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 2C 4D 16 ) 
+/*(0x0799/0x06B1)*/ 		1B <SetRockets> 92 1B <GetRockets> 16 26 16 16 
+/*(0x07B0/0x06C8)*/ [#label_0x07B0]
+/*(0x07B0/0x06C8)*/ 07 [@label_0x0866] 97 9C 1A 2C 08 35 <XGTacticalGameCoreNativeBase.TCharacter.aUpgrades> <XGTacticalGameCoreNativeBase.TCharacter> 00 00 19 01 <XGUnitNativeBase.m_kCharacter> [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 26 16 25 16 
+/*(0x07ED/0x06F1)*/ 	1B <SetBattleScannerCharges> 2C 02 16 
+/*(0x07F9/0x06FD)*/ 	07 [@label_0x082A] 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 35 16 ) 
+/*(0x081E/0x071E)*/ 		1B <SetBattleScannerCharges> 2C 03 16 
+/*(0x082A/0x072A)*/ 	[#label_0x082A]
+/*(0x082A/0x072A)*/ 	07 [@label_0x0866] 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 5B 16 ) 
+/*(0x084F/0x074B)*/ 		1B <SetBattleScannerCharges> 92 1B <GetBattleScannerCharges> 16 26 16 16 
+/*(0x0866/0x0762)*/ [#label_0x0866]
+/*(0x0866/0x0762)*/ 07 [@label_0x09D4] 97 95 1A 2C 08 35 <XGTacticalGameCoreNativeBase.TCharacter.aUpgrades> <XGTacticalGameCoreNativeBase.TCharacter> 00 00 19 01 <XGUnitNativeBase.m_kCharacter> [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 26 16 25 16 
+/*(0x08A3/0x078B)*/ 	1B <SetBattleScannerCharges> 92 1B <GetBattleScannerCharges> 16 95 1A 2C 08 35 <XGTacticalGameCoreNativeBase.TCharacter.aUpgrades> <XGTacticalGameCoreNativeBase.TCharacter> 00 00 19 01 <XGUnitNativeBase.m_kCharacter> [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 26 16 16 16 
+/*(0x08F0/0x07C4)*/ 	07 [@label_0x0962] 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 35 16 ) 
+/*(0x0915/0x07E5)*/ 		1B <SetBattleScannerCharges> 92 1B <GetBattleScannerCharges> 16 95 1A 2C 08 35 <XGTacticalGameCoreNativeBase.TCharacter.aUpgrades> <XGTacticalGameCoreNativeBase.TCharacter> 00 00 19 01 <XGUnitNativeBase.m_kCharacter> [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 26 16 16 16 
+/*(0x0962/0x081E)*/ 	[#label_0x0962]
+/*(0x0962/0x081E)*/ 	07 [@label_0x09D4] 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 5B 16 ) 
+/*(0x0987/0x083F)*/ 		1B <SetBattleScannerCharges> 92 1B <GetBattleScannerCharges> 16 95 1A 2C 08 35 <XGTacticalGameCoreNativeBase.TCharacter.aUpgrades> <XGTacticalGameCoreNativeBase.TCharacter> 00 00 19 01 <XGUnitNativeBase.m_kCharacter> [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 26 16 16 16 
+/*(0x09D4/0x0878)*/ [#label_0x09D4]
+/*(0x09D4/0x0878)*/ 07 [@label_0x0A89] 97 9C 1A 2C 2C 35 <XGTacticalGameCoreNativeBase.TCharacter.aUpgrades> <XGTacticalGameCoreNativeBase.TCharacter> 00 00 19 01 <XGUnitNativeBase.m_kCharacter> [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 26 16 25 16 
+/*(0x0A11/0x08A1)*/ 	1B <SetSmokeGrenadeCharges> 26 16 
+/*(0x0A1C/0x08AC)*/ 	07 [@label_0x0A4D] 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 35 16 ) 
+/*(0x0A41/0x08CD)*/ 		1B <SetSmokeGrenadeCharges> 2C 02 16 
+/*(0x0A4D/0x08D9)*/ 	[#label_0x0A4D]
+/*(0x0A4D/0x08D9)*/ 	07 [@label_0x0A89] 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 5B 16 ) 
+/*(0x0A72/0x08FA)*/ 		1B <SetSmokeGrenadeCharges> 92 1B <GetSmokeGrenadeCharges> 16 26 16 16 
+/*(0x0A89/0x0911)*/ [#label_0x0A89]
+/*(0x0A89/0x0911)*/ 07 [@label_0x0BF7] 97 95 1A 2C 2C 35 <XGTacticalGameCoreNativeBase.TCharacter.aUpgrades> <XGTacticalGameCoreNativeBase.TCharacter> 00 00 19 01 <XGUnitNativeBase.m_kCharacter> [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 26 16 25 16 
+/*(0x0AC6/0x093A)*/ 	1B <SetSmokeGrenadeCharges> 92 1B <GetSmokeGrenadeCharges> 16 95 1A 2C 2C 35 <XGTacticalGameCoreNativeBase.TCharacter.aUpgrades> <XGTacticalGameCoreNativeBase.TCharacter> 00 00 19 01 <XGUnitNativeBase.m_kCharacter> [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 26 16 16 16 
+/*(0x0B13/0x0973)*/ 	07 [@label_0x0B85] 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 35 16 ) 
+/*(0x0B38/0x0994)*/ 		1B <SetSmokeGrenadeCharges> 92 1B <GetSmokeGrenadeCharges> 16 95 1A 2C 2C 35 <XGTacticalGameCoreNativeBase.TCharacter.aUpgrades> <XGTacticalGameCoreNativeBase.TCharacter> 00 00 19 01 <XGUnitNativeBase.m_kCharacter> [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 26 16 16 16 
+/*(0x0B85/0x09CD)*/ 	[#label_0x0B85]
+/*(0x0B85/0x09CD)*/ 	07 [@label_0x0BF7] 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 5B 16 ) 
+/*(0x0BAA/0x09EE)*/ 		1B <SetSmokeGrenadeCharges> 92 1B <GetSmokeGrenadeCharges> 16 95 1A 2C 2C 35 <XGTacticalGameCoreNativeBase.TCharacter.aUpgrades> <XGTacticalGameCoreNativeBase.TCharacter> 00 00 19 01 <XGUnitNativeBase.m_kCharacter> [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 26 16 16 16 
+/*(0x0BF7/0x0A27)*/ [#label_0x0BF7]
+/*(0x0BF7/0x0A27)*/ 07 [@label_0x0FF1] 9A 38 3A 35 <XGTacticalGameCoreNativeBase.TCharacter.eClass> <XGTacticalGameCoreNativeBase.TCharacter> 00 00 19 1B <GetCharacter> 16 [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 38 3A 24 06 16 
+/*(0x0C34/0x0A54)*/ 	0F 01 <XGUnitNativeBase.m_iFragGrenades> 25 
+/*(0x0C3F/0x0A5B)*/ 	0F 01 <XGUnitNativeBase.m_iAlienGrenades> 25 
+/*(0x0C4A/0x0A62)*/ 	0F 01 <@m_iDamageControlTurns> 25 
+/*(0x0C55/0x0A69)*/ 	0F 01 <XGUnitNativeBase.m_iMediKitCharges> 25 
+/*(0x0C60/0x0A70)*/ 	[#label_0x0C60]
+/*(0x0C60/0x0A70)*/ 	07 [@label_0x0FB8] 96 01 <@m_iDamageControlTurns> 35 <XGTacticalGameCoreNativeBase.TInventory.iNumLargeItems> <XGTacticalGameCoreNativeBase.TInventory> 00 00 35 <XGTacticalGameCoreNativeBase.TCharacter.kInventory> <XGTacticalGameCoreNativeBase.TCharacter> 00 00 19 1B <GetCharacter> 16 [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 16 
+/*(0x0CB3/0x0AA7)*/ 		07 [@label_0x0D47] 9A 1A 01 <@m_iDamageControlTurns> 35 <XGTacticalGameCoreNativeBase.TInventory.arrLargeItems> <XGTacticalGameCoreNativeBase.TInventory> 00 00 35 <XGTacticalGameCoreNativeBase.TCharacter.kInventory> <XGTacticalGameCoreNativeBase.TCharacter> 00 00 19 1B <GetCharacter> 16 [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 2C 17 16 
+/*(0x0D09/0x0AE1)*/ 			A1 01 <XGUnitNativeBase.m_iFlamethrowerCharges> 2C 02 16 
+/*(0x0D16/0x0AEA)*/ 			07 [@label_0x0D47] 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 35 16 ) 
+/*(0x0D3B/0x0B0B)*/ 				A1 01 <XGUnitNativeBase.m_iFlamethrowerCharges> 26 16 
+/*(0x0D47/0x0B13)*/ 		[#label_0x0D47]
+/*(0x0D47/0x0B13)*/ 		07 [@label_0x0E41] 9A 1A 01 <@m_iDamageControlTurns> 35 <XGTacticalGameCoreNativeBase.TInventory.arrLargeItems> <XGTacticalGameCoreNativeBase.TInventory> 00 00 35 <XGTacticalGameCoreNativeBase.TCharacter.kInventory> <XGTacticalGameCoreNativeBase.TCharacter> 00 00 19 1B <GetCharacter> 16 [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 2C 18 16 
+/*(0x0D9D/0x0B4D)*/ 			A1 01 <XGUnitNativeBase.m_iFragGrenades> 2C 02 16 
+/*(0x0DAA/0x0B56)*/ 			A1 01 <XGUnitNativeBase.m_iAlienGrenades> 2C 02 16 
+/*(0x0DB7/0x0B5F)*/ 			07 [@label_0x0E04] 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 35 16 ) 
+/*(0x0DDC/0x0B80)*/ 				A1 01 <XGUnitNativeBase.m_iFragGrenades> 01 <XGUnitNativeBase.AdditionalGrenades> 16 
+/*(0x0DF0/0x0B8C)*/ 				A1 01 <XGUnitNativeBase.m_iAlienGrenades> 01 <XGUnitNativeBase.AdditionalGrenades> 16 
+/*(0x0E04/0x0B98)*/ 			[#label_0x0E04]
+/*(0x0E04/0x0B98)*/ 			07 [@label_0x0E41] 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 18 16 ) 
+/*(0x0E29/0x0BB9)*/ 				A1 01 <XGUnitNativeBase.m_iFragGrenades> 26 16 
+/*(0x0E35/0x0BC1)*/ 				A1 01 <XGUnitNativeBase.m_iAlienGrenades> 26 16 
+/*(0x0E41/0x0BC9)*/ 		[#label_0x0E41]
+/*(0x0E41/0x0BC9)*/ 		07 [@label_0x0F0E] 9A 1A 01 <@m_iDamageControlTurns> 35 <XGTacticalGameCoreNativeBase.TInventory.arrLargeItems> <XGTacticalGameCoreNativeBase.TInventory> 00 00 35 <XGTacticalGameCoreNativeBase.TCharacter.kInventory> <XGTacticalGameCoreNativeBase.TCharacter> 00 00 19 1B <GetCharacter> 16 [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 2C 19 16 
+/*(0x0E97/0x0C03)*/ 			A1 01 <XGUnitNativeBase.m_iMediKitCharges> 26 16 
+/*(0x0EA3/0x0C0B)*/ 			07 [@label_0x0EDC] 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 35 16 ) 
+/*(0x0EC8/0x0C2C)*/ 				A1 01 <XGUnitNativeBase.m_iMediKitCharges> 01 <XGUnitNativeBase.AdditionalRestorativeMistShots> 16 
+/*(0x0EDC/0x0C38)*/ 			[#label_0x0EDC]
+/*(0x0EDC/0x0C38)*/ 			07 [@label_0x0F0E] 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 30 16 ) 
+/*(0x0F01/0x0C59)*/ 				A1 01 <XGUnitNativeBase.m_iMediKitCharges> 2C 02 16 
+/*(0x0F0E/0x0C62)*/ 		[#label_0x0F0E]
+/*(0x0F0E/0x0C62)*/ 		07 [@label_0x0FAA] 9A 1A 01 <@m_iDamageControlTurns> 35 <XGTacticalGameCoreNativeBase.TInventory.arrLargeItems> <XGTacticalGameCoreNativeBase.TInventory> 00 00 35 <XGTacticalGameCoreNativeBase.TCharacter.kInventory> <XGTacticalGameCoreNativeBase.TCharacter> 00 00 19 1B <GetCharacter> 16 [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 2C 1B 16 
+/*(0x0F64/0x0C9C)*/ 			A1 01 <XGUnitNativeBase.m_iProximityMines> 2C 03 16 
+/*(0x0F71/0x0CA5)*/ 			07 [@label_0x0FAA] 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 35 16 ) 
+/*(0x0F96/0x0CC6)*/ 				A1 01 <XGUnitNativeBase.m_iProximityMines> 01 <XGUnitNativeBase.AdditionalProximityMines> 16 
+/*(0x0FAA/0x0CD2)*/ 		[#label_0x0FAA]
+/*(0x0FAA/0x0CD2)*/ 		A3 01 <@m_iDamageControlTurns> 16 
+/*(0x0FB5/0x0CD9)*/ 		06 [@label_0x0C60] 
+/*(0x0FB8/0x0CDC)*/ 	[#label_0x0FB8]
+/*(0x0FB8/0x0CDC)*/ 	0F 01 <XGUnitNativeBase.m_iFragGrenades> FA 01 <XGUnitNativeBase.m_iFragGrenades> 2C 02 16 
+/*(0x0FCF/0x0CEB)*/ 	0F 01 <XGUnitNativeBase.m_iAlienGrenades> FA 01 <XGUnitNativeBase.m_iAlienGrenades> 2C 02 16 
+/*(0x0FE6/0x0CFA)*/ 	0F 01 <@m_iDamageControlTurns> 25 
+/*(0x0FF1/0x0D01)*/ [#label_0x0FF1]
+/*(0x0FF1/0x0D01)*/ 07 [@label_0x1039] 82 9A 1B <GetCharType> 16 2C 17 16 18 [@] ( 9B 38 3A 19 01 <Engine.Actor.WorldInfo> [@] <Engine.WorldInfo.NetMode> 00 ( 01 <Engine.WorldInfo.NetMode> ) 38 3A 24 00 16 16 ) 
+/*(0x102D/0x0D31)*/ 	1B <SetStealthCharges> 2C 05 16 
+/*(0x1039/0x0D3D)*/ [#label_0x1039]
+/*(0x1039/0x0D3D)*/ 0F 01 <@m_iDamageControlTurns> 25 
+/*(0x1044/0x0D44)*/ [#label_0x1044]
+/*(0x1044/0x0D44)*/ 07 [@label_0x1164] 96 01 <@m_iDamageControlTurns> 35 <XGTacticalGameCoreNativeBase.TInventory.iNumSmallItems> <XGTacticalGameCoreNativeBase.TInventory> 00 00 35 <XGTacticalGameCoreNativeBase.TCharacter.kInventory> <XGTacticalGameCoreNativeBase.TCharacter> 00 00 19 1B <GetCharacter> 16 [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 16 
+/*(0x1097/0x0D7B)*/ 	07 [@label_0x1156] 9A 1A 01 <@m_iDamageControlTurns> 35 <XGTacticalGameCoreNativeBase.TInventory.arrSmallItems> <XGTacticalGameCoreNativeBase.TInventory> 00 00 35 <XGTacticalGameCoreNativeBase.TCharacter.kInventory> <XGTacticalGameCoreNativeBase.TCharacter> 00 00 19 1B <GetCharacter> 16 [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 2C 60 16 
+/*(0x10ED/0x0DB5)*/ 		A1 01 <XGUnitNativeBase.m_iFlashBangs> 45 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 5B 16 ) [@] ( 2C 02 ) [@] ( 26 ) 16 
+/*(0x1122/0x0DE2)*/ 		A1 01 <XGUnitNativeBase.m_iFlashBangs> 45 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 35 16 ) [@] ( 26 ) [@] ( 25 ) 16 
+/*(0x1156/0x0E0E)*/ 	[#label_0x1156]
+/*(0x1156/0x0E0E)*/ 	A3 01 <@m_iDamageControlTurns> 16 
+/*(0x1161/0x0E15)*/ 	06 [@label_0x1044] 
+/*(0x1164/0x0E18)*/ [#label_0x1164]
+/*(0x1164/0x0E18)*/ 0F 01 <@m_iDamageControlTurns> 25 
+/*(0x116F/0x0E1F)*/ 07 [@label_0x11DE] 9B 38 3A 35 <XGTacticalGameCoreNativeBase.TCharacter.eClass> <XGTacticalGameCoreNativeBase.TCharacter> 00 00 19 1B <GetCharacter> 16 [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 38 3A 24 06 16 
+/*(0x11AC/0x0E4C)*/ 	07 [@label_0x11DE] 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 37 16 ) 
+/*(0x11D1/0x0E6D)*/ 		A1 01 <XGUnitNativeBase.m_iMediKitCharges> 2C 02 16 
+/*(0x11DE/0x0E76)*/ [#label_0x11DE]
+/*(0x11DE/0x0E76)*/ 07 [@label_0x14E6] 9B 38 3A 35 <XGTacticalGameCoreNativeBase.TCharacter.eClass> <XGTacticalGameCoreNativeBase.TCharacter> 00 00 19 1B <GetCharacter> 16 [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 38 3A 24 06 16 
+/*(0x121B/0x0EA3)*/ 	07 [@label_0x14E6] 81 1B <IsAlien_CheckByCharType> 16 16 
+/*(0x122A/0x0EB2)*/ 		0F 01 <XGUnitNativeBase.m_iFlamethrowerCharges> 25 
+/*(0x1235/0x0EB9)*/ 		07 [@label_0x128D] 84 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 9C 16 ) 18 [@] ( 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 7A 16 ) 16 ) 
+/*(0x1281/0x0EFD)*/ 			A1 01 <XGUnitNativeBase.m_iFlamethrowerCharges> 26 16 
+/*(0x128D/0x0F05)*/ 		[#label_0x128D]
+/*(0x128D/0x0F05)*/ 		07 [@label_0x12E5] 84 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 8C 16 ) 18 [@] ( 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 98 16 ) 16 ) 
+/*(0x12D9/0x0F49)*/ 			A1 01 <XGUnitNativeBase.m_iFlamethrowerCharges> 26 16 
+/*(0x12E5/0x0F51)*/ 		[#label_0x12E5]
+/*(0x12E5/0x0F51)*/ 		07 [@label_0x133C] 84 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 26 16 ) 18 [@] ( 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C A1 16 ) 16 ) 
+/*(0x1330/0x0F94)*/ 			A1 01 <XGUnitNativeBase.m_iFlamethrowerCharges> 26 16 
+/*(0x133C/0x0F9C)*/ 		[#label_0x133C]
+/*(0x133C/0x0F9C)*/ 		07 [@label_0x1394] 84 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C A0 16 ) 18 [@] ( 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 9D 16 ) 16 ) 
+/*(0x1388/0x0FE0)*/ 			A1 01 <XGUnitNativeBase.m_iFlamethrowerCharges> 26 16 
+/*(0x1394/0x0FE8)*/ 		[#label_0x1394]
+/*(0x1394/0x0FE8)*/ 		07 [@label_0x13EC] 84 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 8A 16 ) 18 [@] ( 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 9E 16 ) 16 ) 
+/*(0x13E0/0x102C)*/ 			A1 01 <XGUnitNativeBase.m_iFlamethrowerCharges> 26 16 
+/*(0x13EC/0x1034)*/ 		[#label_0x13EC]
+/*(0x13EC/0x1034)*/ 		07 [@label_0x14E6] 12 20 <Class.XGTacticalGameCoreNativeBase> [@] <XGTacticalGameCoreNativeBase.TInventoryHasItemType.ReturnValue> 00 ( 1C <XGTacticalGameCoreNativeBase.TInventoryHasItemType> 35 <XGTacticalGameCoreNativeBase.TCharacter.kInventory> <XGTacticalGameCoreNativeBase.TCharacter> 00 01 19 1B <GetCharacter> 16 [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 2C DE 16 ) 
+/*(0x1442/0x106E)*/ 			0F 01 <XGUnitNativeBase.m_iProximityMines> 12 20 <Class.XGTacticalGameCore> [@] <XGTacticalGameCoreNativeBase.EXALT_LOOT1> 00 ( 02 <XGTacticalGameCoreNativeBase.EXALT_LOOT1> ) 
+/*(0x146A/0x1086)*/ 			07 [@label_0x149B] 19 1B <GetCharacter> 16 [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 35 16 ) 
+/*(0x148F/0x10A7)*/ 				A1 01 <XGUnitNativeBase.m_iProximityMines> 26 16 
+/*(0x149B/0x10AF)*/ 			[#label_0x149B]
+/*(0x149B/0x10AF)*/ 			07 [@label_0x14E6] 97 9C 1A 2C 7B 35 <XGTacticalGameCoreNativeBase.TCharacter.aUpgrades> <XGTacticalGameCoreNativeBase.TCharacter> 00 00 19 1B <GetCharacter> 16 [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 2C 80 16 25 16 
+/*(0x14DA/0x10DE)*/ 				A1 01 <XGUnitNativeBase.m_iProximityMines> 26 16 
+/*(0x14E6/0x10E6)*/ [#label_0x14E6]
+/*(0x14E6/0x10E6)*/ 04 0B 
+/*(0x14E8/0x10E8)*/ 53 

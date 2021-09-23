@@ -1,0 +1,82 @@
+MOD_NAME=Fix smoke buff being lost on overlapping volumes
+AUTHOR=swfdelicious
+DESCRIPTION=Fix for the smoke buff being lost when one smoke is lost while another should be active (either due to the first expiring due to time, or the unit moving between two overlapping smokes).
+
+UPK_FILE=XComGame.upk
+OBJECT=XGVolume.OnUnitLeft:AUTO
+
+[REPLACEMENT_CODE]
+/*(0x0000/0x0000)*/ 0F 00 <.iEffect> 25 
+/*(0x000B/0x0007)*/ [#label_0x000B]
+/*(0x000B/0x0007)*/ 07 [@label_0x032E] 96 00 <.iEffect> 2C 09 16 
+/*(0x001B/0x0013)*/ 	07 [@label_0x0038] 81 1B <HasEffect> 38 3D 00 <.iEffect> 16 16 
+/*(0x0035/0x0029)*/ 		06 [@label_0x0320] 
+/*(0x0038/0x002C)*/ 	[#label_0x0038]
+/*(0x0038/0x002C)*/ 	05 <.iEffect> 00 00 <.iEffect> 
+/*(0x004B/0x0037)*/ 	0A [@label_0x0072] 26 
+/*(0x004F/0x003B)*/ 		19 00 <.kUnit> [@] <NullRef> 00 ( 1B <LeaveSightBlockingVolume> 17 16 ) 
+/*(0x006F/0x0053)*/ 		06 [@label_0x00C8] 
+/*(0x0072/0x0056)*/ 	[#label_0x0072]
+/*(0x0072/0x0056)*/ 	0A [@label_0x009A] 2C 07 
+/*(0x0077/0x005B)*/ 		19 00 <.kUnit> [@] <NullRef> 00 ( 1B <OnLeaveTelekineticField> 17 16 ) 
+/*(0x0097/0x0073)*/ 		06 [@label_0x00C8] 
+/*(0x009A/0x0076)*/ 	[#label_0x009A]
+/*(0x009A/0x0076)*/ 	0A [@label_0x00C2] 2C 08 
+/*(0x009F/0x007B)*/ 		19 00 <.kUnit> [@] <NullRef> 00 ( 1B <OnLeaveRift> 17 16 ) 
+/*(0x00BF/0x0093)*/ 		06 [@label_0x00C8] 
+/*(0x00C2/0x0096)*/ 	[#label_0x00C2]
+/*(0x00C2/0x0096)*/ 	0A FF FF 
+/*(0x00C5/0x0099)*/ 	06 [@label_0x00C8] 
+/*(0x00C8/0x009C)*/ 	[#label_0x00C8]
+/*(0x00C8/0x009C)*/ 	07 [@label_0x019E] 9A 38 3A 1B <GetType> 16 38 3A 24 01 16 
+/*(0x00DD/0x00B1)*/ 		07 [@label_0x0159] 19 19 01 <@m_kInstigator> [@] <XGUnit.GetCharacter.ReturnValue> 00 ( 1B <GetCharacter> 16 ) [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 34 16 ) 
+/*(0x0117/0x00DF)*/ 			14 19 00 <.kUnit> [@] <XGUnitNativeBase.m_bInDenseSmoke> 00 ( 2D 01 <XGUnitNativeBase.m_bInDenseSmoke> ) 28 
+/*(0x0138/0x00F4)*/ 			19 00 <.kUnit> [@] <NullRef> 00 ( 1B <RemoveBonus> 2C 34 16 ) 
+/*(0x0159/0x010D)*/ 		[#label_0x0159]
+/*(0x0159/0x010D)*/ 		14 19 00 <.kUnit> [@] <XGUnitNativeBase.m_bInSmokeBomb> 00 ( 2D 01 <XGUnitNativeBase.m_bInSmokeBomb> ) 28 
+/*(0x017A/0x0122)*/ 		19 00 <.kUnit> [@] <NullRef> 00 ( 1B <RemoveBonus> 2C 2C 16 ) 
+/*(0x019B/0x013B)*/ 		06 [@label_0x02ED] 
+/*(0x019E/0x013E)*/ 	[#label_0x019E]
+/*(0x019E/0x013E)*/ 	07 [@label_0x02ED] 9A 38 3A 1B <GetType> 16 38 3A 24 02 16 
+/*(0x01B3/0x0153)*/ 		07 [@label_0x02AB] 81 19 19 2E <Class.XComGameReplicationInfo> 19 12 20 <Engine.Engine> [@] <Engine.Engine.GetCurrentWorldInfo.ReturnValue> 00 ( 1C <Engine.Engine.GetCurrentWorldInfo> 16 ) [@] <Engine.WorldInfo.GRI> 00 ( 01 <Engine.WorldInfo.GRI> ) [@] <XComGameReplicationInfo.m_kGameCore> 00 ( 01 <XComGameReplicationInfo.m_kGameCore> ) [@] <XGTacticalGameCoreNativeBase.CharacterHasProperty.ReturnValue> 00 ( 1B <CharacterHasProperty> 35 <XGTacticalGameCoreNativeBase.TCharacter.iType> <XGTacticalGameCoreNativeBase.TCharacter> 00 00 19 19 00 <.kUnit> [@] <XGUnit.GetCharacter.ReturnValue> 00 ( 1B <GetCharacter> 16 ) [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 2C 03 16 ) 16 
+/*(0x0269/0x01CD)*/ 			14 19 00 <.kUnit> [@] <XGUnitNativeBase.m_bInCombatDrugs> 00 ( 2D 01 <XGUnitNativeBase.m_bInCombatDrugs> ) 28 
+/*(0x028A/0x01E2)*/ 			19 00 <.kUnit> [@] <NullRef> 00 ( 1B <RemoveBonus> 2C 33 16 ) 
+/*(0x02AB/0x01FB)*/ 		[#label_0x02AB]
+/*(0x02AB/0x01FB)*/ 		14 19 00 <.kUnit> [@] <XGUnitNativeBase.m_bInSmokeBomb> 00 ( 2D 01 <XGUnitNativeBase.m_bInSmokeBomb> ) 28 
+/*(0x02CC/0x0210)*/ 		19 00 <.kUnit> [@] <NullRef> 00 ( 1B <RemoveBonus> 2C 2C 16 ) 
+/*(0x02ED/0x0229)*/ 	[#label_0x02ED]
+/*(0x02ED/0x0229)*/ 	19 00 <.kUnit> [@] <NullRef> 00 ( 1B <RemoveVolume> 17 16 ) 
+/*(0x030D/0x0241)*/ 	1B <RemoveUnit> 00 <.kUnit> 16 
+/*(0x0320/0x0250)*/ 	[#label_0x0320]
+/*(0x0320/0x0250)*/ 	A3 00 <.iEffect> 16 
+/*(0x032B/0x0257)*/ 	06 [@label_0x000B] 
+/*(0x032E/0x025A)*/ [#label_0x032E]
+/*(0x032E/0x025A)*/ 07 [@label_0x0A44] 84 9A 38 3A 1B <GetType> 16 38 3A 24 01 16 18 [@] ( 9A 38 3A 1B <GetType> 16 38 3A 24 02 16 16 ) 
+/*(0x035A/0x0286)*/ 	0F 00 <.iEffect> 25 
+/*(0x0365/0x028D)*/ 	[#label_0x0365]
+/*(0x0365/0x028D)*/ 	07 [@label_0x0A44] 96 00 <.iEffect> 19 19 19 2E <Class.XComTacticalGRI> 19 12 20 <Engine.Engine> [@] <Engine.Engine.GetCurrentWorldInfo.ReturnValue> 00 ( 1C <Engine.Engine.GetCurrentWorldInfo> 16 ) [@] <Engine.WorldInfo.GRI> 00 ( 01 <Engine.WorldInfo.GRI> ) [@] <XComTacticalGRI.m_kBattle> 00 ( 01 <XComTacticalGRI.m_kBattle> ) [@] <XGBattle.m_kVolumeMgr> 00 ( 01 <XGBattle.m_kVolumeMgr> ) [@] <XGVolumeMgr.m_iNumVolumes> 00 ( 01 <XGVolumeMgr.m_iNumVolumes> ) 16 
+/*(0x03EF/0x02E3)*/ 		07 [@label_0x047E] 72 1A 00 <.iEffect> 19 19 19 2E <Class.XComTacticalGRI> 19 12 20 <Engine.Engine> [@] <Engine.Engine.GetCurrentWorldInfo.ReturnValue> 00 ( 1C <Engine.Engine.GetCurrentWorldInfo> 16 ) [@] <Engine.WorldInfo.GRI> 00 ( 01 <Engine.WorldInfo.GRI> ) [@] <XComTacticalGRI.m_kBattle> 00 ( 01 <XComTacticalGRI.m_kBattle> ) [@] <XGBattle.m_kVolumeMgr> 00 ( 01 <XGBattle.m_kVolumeMgr> ) [@] <XGVolumeMgr.m_aVolumes> 00 ( 01 <XGVolumeMgr.m_aVolumes> ) 17 16 
+/*(0x047B/0x033B)*/ 			06 [@label_0x0A36] 
+/*(0x047E/0x033E)*/ 		[#label_0x047E]
+/*(0x047E/0x033E)*/ 		07 [@label_0x05D1] 82 9B 38 3A 19 1A 00 <.iEffect> 19 19 19 2E <Class.XComTacticalGRI> 19 12 20 <Engine.Engine> [@] <Engine.Engine.GetCurrentWorldInfo.ReturnValue> 00 ( 1C <Engine.Engine.GetCurrentWorldInfo> 16 ) [@] <Engine.WorldInfo.GRI> 00 ( 01 <Engine.WorldInfo.GRI> ) [@] <XComTacticalGRI.m_kBattle> 00 ( 01 <XComTacticalGRI.m_kBattle> ) [@] <XGBattle.m_kVolumeMgr> 00 ( 01 <XGBattle.m_kVolumeMgr> ) [@] <XGVolumeMgr.m_aVolumes> 00 ( 01 <XGVolumeMgr.m_aVolumes> ) [@] <XGVolume.GetType.ReturnValue> 00 ( 1B <GetType> 16 ) 38 3A 24 01 16 18 [@] ( 9B 38 3A 19 1A 00 <.iEffect> 19 19 19 2E <Class.XComTacticalGRI> 19 12 20 <Engine.Engine> [@] <Engine.Engine.GetCurrentWorldInfo.ReturnValue> 00 ( 1C <Engine.Engine.GetCurrentWorldInfo> 16 ) [@] <Engine.WorldInfo.GRI> 00 ( 01 <Engine.WorldInfo.GRI> ) [@] <XComTacticalGRI.m_kBattle> 00 ( 01 <XComTacticalGRI.m_kBattle> ) [@] <XGBattle.m_kVolumeMgr> 00 ( 01 <XGBattle.m_kVolumeMgr> ) [@] <XGVolumeMgr.m_aVolumes> 00 ( 01 <XGVolumeMgr.m_aVolumes> ) [@] <XGVolume.GetType.ReturnValue> 00 ( 1B <GetType> 16 ) 38 3A 24 02 16 16 ) 
+/*(0x05CE/0x041E)*/ 			06 [@label_0x0A36] 
+/*(0x05D1/0x0421)*/ 		[#label_0x05D1]
+/*(0x05D1/0x0421)*/ 		07 [@label_0x0A36] 19 1A 00 <.iEffect> 19 19 19 2E <Class.XComTacticalGRI> 19 12 20 <Engine.Engine> [@] <Engine.Engine.GetCurrentWorldInfo.ReturnValue> 00 ( 1C <Engine.Engine.GetCurrentWorldInfo> 16 ) [@] <Engine.WorldInfo.GRI> 00 ( 01 <Engine.WorldInfo.GRI> ) [@] <XComTacticalGRI.m_kBattle> 00 ( 01 <XComTacticalGRI.m_kBattle> ) [@] <XGBattle.m_kVolumeMgr> 00 ( 01 <XGBattle.m_kVolumeMgr> ) [@] <XGVolumeMgr.m_aVolumes> 00 ( 01 <XGVolumeMgr.m_aVolumes> ) [@] <XGVolume.HasUnitEntered.ReturnValue> 00 ( 1B <HasUnitEntered> 00 <.kUnit> 16 ) 
+/*(0x0679/0x048D)*/ 			14 19 00 <.kUnit> [@] <XGUnitNativeBase.m_bInSmokeBomb> 00 ( 2D 01 <XGUnitNativeBase.m_bInSmokeBomb> ) 27 
+/*(0x069A/0x04A2)*/ 			19 00 <.kUnit> [@] <NullRef> 00 ( 1B <AddBonus> 2C 2C 16 ) 
+/*(0x06BB/0x04BB)*/ 			07 [@label_0x0875] 82 9A 38 3A 19 1A 00 <.iEffect> 19 19 19 2E <Class.XComTacticalGRI> 19 12 20 <Engine.Engine> [@] <Engine.Engine.GetCurrentWorldInfo.ReturnValue> 00 ( 1C <Engine.Engine.GetCurrentWorldInfo> 16 ) [@] <Engine.WorldInfo.GRI> 00 ( 01 <Engine.WorldInfo.GRI> ) [@] <XComTacticalGRI.m_kBattle> 00 ( 01 <XComTacticalGRI.m_kBattle> ) [@] <XGBattle.m_kVolumeMgr> 00 ( 01 <XGBattle.m_kVolumeMgr> ) [@] <XGVolumeMgr.m_aVolumes> 00 ( 01 <XGVolumeMgr.m_aVolumes> ) [@] <XGVolume.GetType.ReturnValue> 00 ( 1B <GetType> 16 ) 38 3A 24 01 16 18 [@] ( 19 19 19 1A 00 <.iEffect> 19 19 19 2E <Class.XComTacticalGRI> 19 12 20 <Engine.Engine> [@] <Engine.Engine.GetCurrentWorldInfo.ReturnValue> 00 ( 1C <Engine.Engine.GetCurrentWorldInfo> 16 ) [@] <Engine.WorldInfo.GRI> 00 ( 01 <Engine.WorldInfo.GRI> ) [@] <XComTacticalGRI.m_kBattle> 00 ( 01 <XComTacticalGRI.m_kBattle> ) [@] <XGBattle.m_kVolumeMgr> 00 ( 01 <XGBattle.m_kVolumeMgr> ) [@] <XGVolumeMgr.m_aVolumes> 00 ( 01 <XGVolumeMgr.m_aVolumes> ) [@] <@m_kInstigator> 00 ( 01 <@m_kInstigator> ) [@] <XGUnit.GetCharacter.ReturnValue> 00 ( 1B <GetCharacter> 16 ) [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 34 16 ) 16 ) 
+/*(0x0830/0x05B4)*/ 				14 19 00 <.kUnit> [@] <XGUnitNativeBase.m_bInDenseSmoke> 00 ( 2D 01 <XGUnitNativeBase.m_bInDenseSmoke> ) 27 
+/*(0x0851/0x05C9)*/ 				19 00 <.kUnit> [@] <NullRef> 00 ( 1B <AddBonus> 2C 34 16 ) 
+/*(0x0872/0x05E2)*/ 				06 [@label_0x0A16] 
+/*(0x0875/0x05E5)*/ 			[#label_0x0875]
+/*(0x0875/0x05E5)*/ 			07 [@label_0x0A16] 82 9A 38 3A 19 1A 00 <.iEffect> 19 19 19 2E <Class.XComTacticalGRI> 19 12 20 <Engine.Engine> [@] <Engine.Engine.GetCurrentWorldInfo.ReturnValue> 00 ( 1C <Engine.Engine.GetCurrentWorldInfo> 16 ) [@] <Engine.WorldInfo.GRI> 00 ( 01 <Engine.WorldInfo.GRI> ) [@] <XComTacticalGRI.m_kBattle> 00 ( 01 <XComTacticalGRI.m_kBattle> ) [@] <XGBattle.m_kVolumeMgr> 00 ( 01 <XGBattle.m_kVolumeMgr> ) [@] <XGVolumeMgr.m_aVolumes> 00 ( 01 <XGVolumeMgr.m_aVolumes> ) [@] <XGVolume.GetType.ReturnValue> 00 ( 1B <GetType> 16 ) 38 3A 24 02 16 18 [@] ( 81 19 19 2E <Class.XComGameReplicationInfo> 19 12 20 <Engine.Engine> [@] <Engine.Engine.GetCurrentWorldInfo.ReturnValue> 00 ( 1C <Engine.Engine.GetCurrentWorldInfo> 16 ) [@] <Engine.WorldInfo.GRI> 00 ( 01 <Engine.WorldInfo.GRI> ) [@] <XComGameReplicationInfo.m_kGameCore> 00 ( 01 <XComGameReplicationInfo.m_kGameCore> ) [@] <XGTacticalGameCoreNativeBase.CharacterHasProperty.ReturnValue> 00 ( 1B <CharacterHasProperty> 35 <XGTacticalGameCoreNativeBase.TCharacter.iType> <XGTacticalGameCoreNativeBase.TCharacter> 00 00 19 19 00 <.kUnit> [@] <XGUnit.GetCharacter.ReturnValue> 00 ( 1B <GetCharacter> 16 ) [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 2C 03 16 ) 16 16 ) 
+/*(0x09D4/0x06D0)*/ 				14 19 00 <.kUnit> [@] <XGUnitNativeBase.m_bInCombatDrugs> 00 ( 2D 01 <XGUnitNativeBase.m_bInCombatDrugs> ) 27 
+/*(0x09F5/0x06E5)*/ 				19 00 <.kUnit> [@] <NullRef> 00 ( 1B <AddBonus> 2C 33 16 ) 
+/*(0x0A16/0x06FE)*/ 			[#label_0x0A16]
+/*(0x0A16/0x06FE)*/ 			19 00 <.kUnit> [@] <NullRef> 00 ( 1B <UpdateCoverBonuses> 2A 16 ) 
+/*(0x0A36/0x0716)*/ 		[#label_0x0A36]
+/*(0x0A36/0x0716)*/ 		A5 00 <.iEffect> 16 
+/*(0x0A41/0x071D)*/ 		06 [@label_0x0365] 
+/*(0x0A44/0x0720)*/ [#label_0x0A44]
+/*(0x0A44/0x0720)*/ 04 0B 
+/*(0x0A46/0x0722)*/ 53 

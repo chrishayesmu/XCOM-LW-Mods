@@ -1,0 +1,58 @@
+UPK_FILE = XComGame.upk
+OBJECT = XGAbilityTree.GetVolume : AUTO
+[REPLACEMENT_CODE]
+/*(0x0000/0x0000)*/ 07 [@label_0x0058] 82 81 1B <AbilityHasEffect> 19 00 <.kAbility> [@] <XGAbility.iType> 00 ( 01 <XGAbility.iType> ) 2C 10 16 16 18 [@] ( 9B 19 00 <.kAbility> [@] <XGAbility.iType> 00 ( 01 <XGAbility.iType> ) 2C 3A 16 16 ) 
+/*(0x0056/0x003E)*/ 	04 0B 
+/*(0x0058/0x0040)*/ [#label_0x0058]
+/*(0x0058/0x0040)*/ 05 <XGAbility.GetType.ReturnValue> 00 19 00 <.kAbility> [@] <XGAbility.GetType.ReturnValue> 00 ( 1B <GetType> 16 ) 
+/*(0x0081/0x005D)*/ 0A [@label_0x02B0] 2C 11 
+/*(0x0086/0x0062)*/ 	07 [@label_0x0161] 19 19 19 00 <.kAbility> [@] <XGAbility.m_kUnit> 00 ( 01 <XGAbility.m_kUnit> ) [@] <XGUnit.GetCharacter.ReturnValue> 00 ( 1B <GetCharacter> 16 ) [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 33 16 ) 
+/*(0x00D5/0x009D)*/ 		0F 48 <.kVolume> 19 19 19 2E <Class.XComTacticalGRI> 19 12 20 <Engine.Engine> [@] <Engine.Engine.GetCurrentWorldInfo.ReturnValue> 00 ( 1C <Engine.Engine.GetCurrentWorldInfo> 16 ) [@] <Engine.WorldInfo.GRI> 00 ( 01 <Engine.WorldInfo.GRI> ) [@] <XComTacticalGRI.m_kBattle> 00 ( 01 <XComTacticalGRI.m_kBattle> ) [@] <XGBattle.m_kVolumeMgr> 00 ( 01 <XGBattle.m_kVolumeMgr> ) [@] <XGVolumeMgr.GetTVolume.ReturnValue> 00 ( 1B <GetTVolume> 24 02 16 ) 
+/*(0x015E/0x00F6)*/ 		06 [@label_0x01EA] 
+/*(0x0161/0x00F9)*/ 	[#label_0x0161]
+/*(0x0161/0x00F9)*/ 	0F 48 <.kVolume> 19 19 19 2E <Class.XComTacticalGRI> 19 12 20 <Engine.Engine> [@] <Engine.Engine.GetCurrentWorldInfo.ReturnValue> 00 ( 1C <Engine.Engine.GetCurrentWorldInfo> 16 ) [@] <Engine.WorldInfo.GRI> 00 ( 01 <Engine.WorldInfo.GRI> ) [@] <XComTacticalGRI.m_kBattle> 00 ( 01 <XComTacticalGRI.m_kBattle> ) [@] <XGBattle.m_kVolumeMgr> 00 ( 01 <XGBattle.m_kVolumeMgr> ) [@] <XGVolumeMgr.GetTVolume.ReturnValue> 00 ( 1B <GetTVolume> 24 01 16 ) 
+/*(0x01EA/0x0152)*/ 	[#label_0x01EA]
+/*(0x01EA/0x0152)*/ 	0F 35 <XGTacticalGameCoreNativeBase.TVolume.fRadius> <XGTacticalGameCoreNativeBase.TVolume> 00 01 48 <.kVolume> 19 19 00 <.kAbility> [@] <XGAbility_Targeted.m_kWeapon> 00 ( 01 <XGAbility_Targeted.m_kWeapon> ) [@] <XGWeapon.GetDamageRadius.ReturnValue> 00 ( 1B <GetDamageRadius> 16 ) 
+/*(0x023B/0x0187)*/ 	07 [@label_0x02AD] 19 19 19 00 <.kAbility> [@] <XGAbility.m_kUnit> 00 ( 01 <XGAbility.m_kUnit> ) [@] <XGUnit.GetCharacter.ReturnValue> 00 ( 1B <GetCharacter> 16 ) [@] <XGCharacter.HasUpgrade.ReturnValue> 00 ( 1B <HasUpgrade> 2C 33 16 ) 
+/*(0x028A/0x01C2)*/ 		B6 35 <XGTacticalGameCoreNativeBase.TVolume.fRadius> <XGTacticalGameCoreNativeBase.TVolume> 00 01 48 <.kVolume> 1E <%f 1.25> 16 
+/*(0x02AD/0x01D9)*/ 	[#label_0x02AD]
+/*(0x02AD/0x01D9)*/ 	06 [@label_0x071C] 
+/*(0x02B0/0x01DC)*/ [#label_0x02B0]
+/*(0x02B0/0x01DC)*/ 0A [@label_0x0341] 2C 17 
+/*(0x02B5/0x01E1)*/ 	0F 48 <.kVolume> 19 19 19 2E <Class.XComTacticalGRI> 19 12 20 <Engine.Engine> [@] <Engine.Engine.GetCurrentWorldInfo.ReturnValue> 00 ( 1C <Engine.Engine.GetCurrentWorldInfo> 16 ) [@] <Engine.WorldInfo.GRI> 00 ( 01 <Engine.WorldInfo.GRI> ) [@] <XComTacticalGRI.m_kBattle> 00 ( 01 <XComTacticalGRI.m_kBattle> ) [@] <XGBattle.m_kVolumeMgr> 00 ( 01 <XGBattle.m_kVolumeMgr> ) [@] <XGVolumeMgr.GetTVolume.ReturnValue> 00 ( 1B <GetTVolume> 24 03 16 ) 
+/*(0x033E/0x023A)*/ 	06 [@label_0x071C] 
+/*(0x0341/0x023D)*/ [#label_0x0341]
+/*(0x0341/0x023D)*/ 0A [@label_0x03D2] 2C 16 
+/*(0x0346/0x0242)*/ 	0F 48 <.kVolume> 19 19 19 2E <Class.XComTacticalGRI> 19 12 20 <Engine.Engine> [@] <Engine.Engine.GetCurrentWorldInfo.ReturnValue> 00 ( 1C <Engine.Engine.GetCurrentWorldInfo> 16 ) [@] <Engine.WorldInfo.GRI> 00 ( 01 <Engine.WorldInfo.GRI> ) [@] <XComTacticalGRI.m_kBattle> 00 ( 01 <XComTacticalGRI.m_kBattle> ) [@] <XGBattle.m_kVolumeMgr> 00 ( 01 <XGBattle.m_kVolumeMgr> ) [@] <XGVolumeMgr.GetTVolume.ReturnValue> 00 ( 1B <GetTVolume> 24 00 16 ) 
+/*(0x03CF/0x029B)*/ 	06 [@label_0x071C] 
+/*(0x03D2/0x029E)*/ [#label_0x03D2]
+/*(0x03D2/0x029E)*/ 0A [@label_0x050D] 2C 38 
+/*(0x03D7/0x02A3)*/ 	0F 48 <.kVolume> 19 19 19 2E <Class.XComTacticalGRI> 19 12 20 <Engine.Engine> [@] <Engine.Engine.GetCurrentWorldInfo.ReturnValue> 00 ( 1C <Engine.Engine.GetCurrentWorldInfo> 16 ) [@] <Engine.WorldInfo.GRI> 00 ( 01 <Engine.WorldInfo.GRI> ) [@] <XComTacticalGRI.m_kBattle> 00 ( 01 <XComTacticalGRI.m_kBattle> ) [@] <XGBattle.m_kVolumeMgr> 00 ( 01 <XGBattle.m_kVolumeMgr> ) [@] <XGVolumeMgr.GetTVolume.ReturnValue> 00 ( 1B <GetTVolume> 24 05 16 ) 
+/*(0x0460/0x02FC)*/ 	07 [@label_0x04EB] 97 9C 1A 2C 7B 35 <XGTacticalGameCoreNativeBase.TCharacter.aUpgrades> <XGTacticalGameCoreNativeBase.TCharacter> 00 00 19 19 19 00 <.kAbility> [@] <XGAbility.m_kUnit> 00 ( 01 <XGAbility.m_kUnit> ) [@] <XGUnit.GetCharacter.ReturnValue> 00 ( 1B <GetCharacter> 16 ) [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 2C 80 16 25 16 
+/*(0x04C9/0x0345)*/ 		0F 35 <XGTacticalGameCoreNativeBase.TVolume.iDuration> <XGTacticalGameCoreNativeBase.TVolume> 00 01 48 <.kVolume> 2C 06 
+/*(0x04E8/0x0358)*/ 		06 [@label_0x050A] 
+/*(0x04EB/0x035B)*/ 	[#label_0x04EB]
+/*(0x04EB/0x035B)*/ 	0F 35 <XGTacticalGameCoreNativeBase.TVolume.iDuration> <XGTacticalGameCoreNativeBase.TVolume> 00 01 48 <.kVolume> 2C 04 
+/*(0x050A/0x036E)*/ 	[#label_0x050A]
+/*(0x050A/0x036E)*/ 	06 [@label_0x071C] 
+/*(0x050D/0x0371)*/ [#label_0x050D]
+/*(0x050D/0x0371)*/ 0A [@label_0x0512] 2C 4C 
+/*(0x0512/0x0376)*/ [#label_0x0512]
+/*(0x0512/0x0376)*/ 0A [@label_0x05F4] 2C 18 
+/*(0x0517/0x037B)*/ 	0F 48 <.kVolume> 19 19 19 2E <Class.XComTacticalGRI> 19 12 20 <Engine.Engine> [@] <Engine.Engine.GetCurrentWorldInfo.ReturnValue> 00 ( 1C <Engine.Engine.GetCurrentWorldInfo> 16 ) [@] <Engine.WorldInfo.GRI> 00 ( 01 <Engine.WorldInfo.GRI> ) [@] <XComTacticalGRI.m_kBattle> 00 ( 01 <XComTacticalGRI.m_kBattle> ) [@] <XGBattle.m_kVolumeMgr> 00 ( 01 <XGBattle.m_kVolumeMgr> ) [@] <XGVolumeMgr.GetTVolume.ReturnValue> 00 ( 1B <GetTVolume> 24 07 16 ) 
+/*(0x05A0/0x03D4)*/ 	0F 35 <XGTacticalGameCoreNativeBase.TVolume.fRadius> <XGTacticalGameCoreNativeBase.TVolume> 00 01 48 <.kVolume> 19 19 00 <.kAbility> [@] <XGAbility_Targeted.m_kWeapon> 00 ( 01 <XGAbility_Targeted.m_kWeapon> ) [@] <XGWeapon.GetDamageRadius.ReturnValue> 00 ( 1B <GetDamageRadius> 16 ) 
+/*(0x05F1/0x0409)*/ 	06 [@label_0x071C] 
+/*(0x05F4/0x040C)*/ [#label_0x05F4]
+/*(0x05F4/0x040C)*/ 0A [@label_0x0685] 2C 3A 
+/*(0x05F9/0x0411)*/ 	0F 48 <.kVolume> 19 19 19 2E <Class.XComTacticalGRI> 19 12 20 <Engine.Engine> [@] <Engine.Engine.GetCurrentWorldInfo.ReturnValue> 00 ( 1C <Engine.Engine.GetCurrentWorldInfo> 16 ) [@] <Engine.WorldInfo.GRI> 00 ( 01 <Engine.WorldInfo.GRI> ) [@] <XComTacticalGRI.m_kBattle> 00 ( 01 <XComTacticalGRI.m_kBattle> ) [@] <XGBattle.m_kVolumeMgr> 00 ( 01 <XGBattle.m_kVolumeMgr> ) [@] <XGVolumeMgr.GetTVolume.ReturnValue> 00 ( 1B <GetTVolume> 24 09 16 ) 
+/*(0x0682/0x046A)*/ 	06 [@label_0x071C] 
+/*(0x0685/0x046D)*/ [#label_0x0685]
+/*(0x0685/0x046D)*/ 0A [@label_0x0716] 2C 3B 
+/*(0x068A/0x0472)*/ 	0F 48 <.kVolume> 19 19 19 2E <Class.XComTacticalGRI> 19 12 20 <Engine.Engine> [@] <Engine.Engine.GetCurrentWorldInfo.ReturnValue> 00 ( 1C <Engine.Engine.GetCurrentWorldInfo> 16 ) [@] <Engine.WorldInfo.GRI> 00 ( 01 <Engine.WorldInfo.GRI> ) [@] <XComTacticalGRI.m_kBattle> 00 ( 01 <XComTacticalGRI.m_kBattle> ) [@] <XGBattle.m_kVolumeMgr> 00 ( 01 <XGBattle.m_kVolumeMgr> ) [@] <XGVolumeMgr.GetTVolume.ReturnValue> 00 ( 1B <GetTVolume> 24 08 16 ) 
+/*(0x0713/0x04CB)*/ 	06 [@label_0x071C] 
+/*(0x0716/0x04CE)*/ [#label_0x0716]
+/*(0x0716/0x04CE)*/ 0A FF FF 
+/*(0x0719/0x04D1)*/ 06 [@label_0x071C] 
+/*(0x071C/0x04D4)*/ [#label_0x071C]
+/*(0x071C/0x04D4)*/ 04 0B 
+/*(0x071E/0x04D6)*/ 53 

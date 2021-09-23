@@ -1,0 +1,11 @@
+MOD_NAME=Elerium Batteries
+AUTHOR=swfdelicious
+DESCRIPTION=TBD
+UPK_FILE=XComStrategyGame.upk
+OBJECT=XGTechTree.BuildFoundryTechs : AUTO
+
+[BEFORE_CODE]
+1B <BuildFoundryTech> 24 2E 24 00 24 00 4A 4A 4A 4A 4A 2C 13 16 
+[AFTER_CODE]
+1B <BuildFoundryTech> 24 2E 24 00 24 00 4A 4A 4A 4A 4A 2C 13 16 
+1B <BuildFoundryTech> 24 2F 24 00 24 00 4A 4A 4A 4A 4A 2C 13 16 

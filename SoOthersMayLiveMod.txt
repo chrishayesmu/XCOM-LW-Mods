@@ -1,0 +1,18 @@
+MOD_NAME=So Others May Live mod
+AUTHOR=swfdelicious
+DESCRIPTION=Changes the amount of aim and will gained from So Others May Live per mission. The maximum number of times a unit can benefit from SOML is in DefaultGameCore.ini, in the variable COUNCIL_STAT_MAX. Note that COUNCIL_STAT_MAX is the max number of buffs, not the max stat increase. Ex: if you're giving +2 aim per mission and COUNCIL_STAT_MAX is 8, then the max stat increase is 16.
+UPK_FILE=XComGame.upk
+OBJECT=XGBattle.Done.AdditionalBonuses:AUTO
+
+ALIAS=AIM_GAIN_PER_MISSION:<%b 2>
+ALIAS=WILL_GAIN_PER_MISSION:<%b 2>
+
+[BEFORE_CODE]
+A1 1A 2C 06 35 <XGTacticalGameCoreNativeBase.TCharacter.aStats> <XGTacticalGameCoreNativeBase.TCharacter> 00 01 19 00 <.kSoldier> [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 26 16 
+A1 1A 26 35 <XGTacticalGameCoreNativeBase.TCharacter.aStats> <XGTacticalGameCoreNativeBase.TCharacter> 00 01 19 00 <.kSoldier> [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 2C 01 16 
+A1 1A 2C 07 35 <XGTacticalGameCoreNativeBase.TCharacter.aStats> <XGTacticalGameCoreNativeBase.TCharacter> 00 01 19 00 <.kSoldier> [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 2C 01 16 
+
+[AFTER_CODE]
+A1 1A 2C 06 35 <XGTacticalGameCoreNativeBase.TCharacter.aStats> <XGTacticalGameCoreNativeBase.TCharacter> 00 01 19 00 <.kSoldier> [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 2C 01 16 
+A1 1A 26 35 <XGTacticalGameCoreNativeBase.TCharacter.aStats> <XGTacticalGameCoreNativeBase.TCharacter> 00 01 19 00 <.kSoldier> [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 2C <!AIM_GAIN_PER_MISSION> 16 
+A1 1A 2C 07 35 <XGTacticalGameCoreNativeBase.TCharacter.aStats> <XGTacticalGameCoreNativeBase.TCharacter> 00 01 19 00 <.kSoldier> [@] <XGCharacter.m_kChar> 00 ( 01 <XGCharacter.m_kChar> ) 2C <!WILL_GAIN_PER_MISSION> 16 

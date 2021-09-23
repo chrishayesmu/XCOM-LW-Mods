@@ -1,0 +1,62 @@
+MOD_NAME=Rebalance Progeny Soldiers
+AUTHOR=swfdelicious
+DESCRIPTION=Allows you to select the starting rank for Annette Durand (from Deluge) and the 3 soldiers you rescue from Furies.
+UPK_FILE=XComStrategyGame.upk
+OBJECT=XGFundingCouncil.BuildMission:AUTO
+
+/******************************
+ * Configuration settings
+ *****************************/
+
+// Ranks:
+//	 1 - Specialist
+//   2 - Lance Corporal
+//   3 - Corporal
+//   4 - Sergeant
+//   5 - Tech Sergeant
+//   6 - Gunnery Sergeant
+//   7 - Master Sergeant
+
+ALIAS=ANNETTE_RANK:<%b 3>     // Normally starts at 1 (Specialist)
+ALIAS=ALECTO_RANK:<%b 4>      // Normally starts at 4 (Sergeant)
+ALIAS=MEGAERA_RANK:<%b 4>     // Normally starts at 1 (Specialist)
+ALIAS=TISIPHONE_RANK:<%b 4>   // Normally starts at 1 (Specialist)
+
+/******************************
+ * End of configuration
+ *
+ * DO NOT MODIFY PAST THIS POINT
+ *****************************/
+ 
+ 
+// Alecto
+
+[BEFORE_CODE]
+0F 35 <XGFundingCouncil.TFundingCouncilRewardSoldier.SoldierRank> <@TFundingCouncilRewardSoldier> 00 01 00 <.CustomSoldier> 24 04 
+
+[AFTER_CODE]
+0F 35 <XGFundingCouncil.TFundingCouncilRewardSoldier.SoldierRank> <@TFundingCouncilRewardSoldier> 00 01 00 <.CustomSoldier> 24 <!ALECTO_RANK>  
+
+// First instance of this block is Annette, from Deluge
+
+[BEFORE_CODE]
+0F 35 <XGFundingCouncil.TFundingCouncilRewardSoldier.SoldierRank> <@TFundingCouncilRewardSoldier> 00 01 00 <.CustomSoldier> 24 01
+
+[AFTER_CODE]
+0F 35 <XGFundingCouncil.TFundingCouncilRewardSoldier.SoldierRank> <@TFundingCouncilRewardSoldier> 00 01 00 <.CustomSoldier> 24 <!ANNETTE_RANK>
+
+// Second is Megaera
+
+[BEFORE_CODE]
+0F 35 <XGFundingCouncil.TFundingCouncilRewardSoldier.SoldierRank> <@TFundingCouncilRewardSoldier> 00 01 00 <.CustomSoldier> 24 01
+
+[AFTER_CODE]
+0F 35 <XGFundingCouncil.TFundingCouncilRewardSoldier.SoldierRank> <@TFundingCouncilRewardSoldier> 00 01 00 <.CustomSoldier> 24 <!MEGAERA_RANK>
+
+// Third is Tisiphone
+
+[BEFORE_CODE]
+0F 35 <XGFundingCouncil.TFundingCouncilRewardSoldier.SoldierRank> <@TFundingCouncilRewardSoldier> 00 01 00 <.CustomSoldier> 24 01
+
+[AFTER_CODE]
+0F 35 <XGFundingCouncil.TFundingCouncilRewardSoldier.SoldierRank> <@TFundingCouncilRewardSoldier> 00 01 00 <.CustomSoldier> 24 <!TISIPHONE_RANK>

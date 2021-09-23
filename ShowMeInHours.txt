@@ -1,0 +1,110 @@
+MOD_NAME=Show Me In Hours
+AUTHOR=swfdelicious
+DESCRIPTION=Changes the threshold at which the UI shows you upcoming events in hours rather than days. Does not apply to the main event list, which always shows days, but only in submenus.
+UPK_FILE=XComStrategyGame.upk
+
+/******************************
+ * Configuration settings
+ *****************************/
+
+// Configure the threshold at which to switch over from showing days to hours. You enter the number of hours
+// below which to show hours, e.g. a value of 24 will switch from "1 day" to "X hours" once there are 23 or less
+// hours remaining.
+//
+// REMEMBER: These only apply in their respective menus. The main Event List UI always shows the time remaining in days.
+//
+// The default value for all of these without the mod is 24 hours. Values must be between 0 and 255. Anything not listed here
+// (such as research) will use the default threshold.
+
+ALIAS=HOURS_AUGMENT:<%b 72>     	   // Threshold for Mec augmentation in Engineering
+ALIAS=HOURS_FOUNDRY:<%b 72>     	   // Threshold for Foundry projects in Engineering
+ALIAS=HOURS_GENE:<%b 72>        	   // Threshold for Gene mods in Research
+ALIAS=HOURS_INTERCEPTORS:<%b 72>       // Threshold for interceptor/Firestorm repair time in Hangar
+ALIAS=HOURS_ITEMS:<%b 72>       	   // Threshold for building items in Engineering
+ALIAS=HOURS_SOLDIERS:<%b 72>    	   // Threshold for soldiers in Barracks (wounds, fatigue, augmentation, gene mods, psi)
+
+/******************************
+ * End of configuration
+ *
+ * DO NOT MODIFY PAST THIS POINT
+ *****************************/
+
+OBJECT=XGCyberneticsUI.BuildTrainees:AUTO
+
+[BEFORE_CODE]
+96 00 <.iHours> 2C 18 16
+[AFTER_CODE]
+96 00 <.iHours> 2C <!HOURS_AUGMENT> 16
+
+
+
+OBJECT=XGFacility_Engineering.GetFoundryETAString:AUTO
+
+[BEFORE_CODE]
+96 00 <.iHours> 2C 18 16 
+[AFTER_CODE]
+96 00 <.iHours> 2C <!HOURS_FOUNDRY> 16 
+
+
+
+OBJECT=XGGeneLabUI.BuildTrainees:AUTO
+
+[BEFORE_CODE]
+96 00 <.iHours> 2C 18 16 
+[AFTER_CODE]
+96 00 <.iHours> 2C <!HOURS_GENE> 16 
+
+
+
+OBJECT=XGShip_Interceptor.GetStatusString:AUTO
+
+[BEFORE_CODE]
+99 01 <@m_iHoursDown> 2C 18 16 
+[AFTER_CODE]
+99 01 <@m_iHoursDown> 2C <!HOURS_INTERCEPTORS> 16 
+
+
+
+OBJECT=XGFacility_Engineering.GetETAString:AUTO
+
+[BEFORE_CODE]
+96 00 <.iHours> 2C 18 16
+[AFTER_CODE]
+96 00 <.iHours> 2C <!HOURS_ITEMS> 16
+
+
+
+OBJECT=XGStrategySoldier.GetStatusString:AUTO
+
+[BEFORE_CODE]
+99 01 <@m_iTurnsOut> 2C 18 16 
+[AFTER_CODE]
+99 01 <@m_iTurnsOut> 2C <!HOURS_SOLDIERS> 16 
+
+// Deliberately repeated chunk
+
+[BEFORE_CODE]
+99 01 <@m_iTurnsOut> 2C 18 16 
+[AFTER_CODE]
+99 01 <@m_iTurnsOut> 2C <!HOURS_SOLDIERS> 16 
+
+
+/*
+// Event list UI
+OBJECT=XGMissionControlUI.BuildEventOptions:AUTO
+
+[BEFORE_CODE]
+// iDays = m_kEvents.arrEvents[iEvent].iHours / 24;
+0F 00 <.iDays> 91 35 <XGStrategyActorNativeBase.THQEvent.iHours> <XGStrategyActorNativeBase.THQEvent> 00 00 10 00 <.iEvent> 35 <XGMissionControlUI.TMCEventMenu.arrEvents> <@TMCEventMenu> 00 00 01 <@m_kEvents> 2C 18 16 
+[AFTER_CODE]
+// iDays = m_kEvents.arrEvents[iEvent].iHours;
+0F 00 <.iDays> 91 35 <XGStrategyActorNativeBase.THQEvent.iHours> <XGStrategyActorNativeBase.THQEvent> 00 00 10 00 <.iEvent> 35 <XGMissionControlUI.TMCEventMenu.arrEvents> <@TMCEventMenu> 00 00 01 <@m_kEvents> 2C 01 16 
+
+[BEFORE_CODE]
+// if((m_kEvents.arrEvents[iEvent].iHours % 24) > 0)
+97 FD 35 <XGStrategyActorNativeBase.THQEvent.iHours> <XGStrategyActorNativeBase.THQEvent> 00 00 10 00 <.iEvent> 35 <XGMissionControlUI.TMCEventMenu.arrEvents> <@TMCEventMenu> 00 00 01 <@m_kEvents> 2C 18 16 25 16 
+
+[AFTER_CODE]
+// if((m_kEvents.arrEvents[iEvent].iHours % 1) > 0)
+97 FD 35 <XGStrategyActorNativeBase.THQEvent.iHours> <XGStrategyActorNativeBase.THQEvent> 00 00 10 00 <.iEvent> 35 <XGMissionControlUI.TMCEventMenu.arrEvents> <@TMCEventMenu> 00 00 01 <@m_kEvents> 2C 01 16 25 16 
+*/
