@@ -9,7 +9,7 @@ OBJECT=XGFundingCouncil.BuildMission:AUTO
  *****************************/
 
 // Ranks:
-//	 1 - Specialist
+//   1 - Specialist
 //   2 - Lance Corporal
 //   3 - Corporal
 //   4 - Sergeant
