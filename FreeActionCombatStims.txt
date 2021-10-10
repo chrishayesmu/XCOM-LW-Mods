@@ -1,0 +1,10 @@
+MOD_NAME=Free Action Combat Stims
+AUTHOR=swfdelicious
+DESCRIPTION=Turns Combat Stims into a free action to use, rather than being turn-ending (or using the blue move for soldiers with Light 'Em Up).
+UPK_FILE = XComGame.upk
+
+OBJECT = XGAbilityTree.BuildAbilities : AUTO
+[BEFORE_CODE]
+/*(0x0A82/0x0A6E)*/ 1B <BuildAbility> 24 1F 26 25 2C 05 1D <%i -20> 4A 4A 4A 26 24 07 4A 4A 4A 4A 4A 4A 24 03 4A 4A 4A 4A 4A 16 
+[AFTER_CODE]
+/*(0x0A82/0x0A6E)*/ 1B <BuildAbility> 24 1F 26 25 2C 05 1D <%i -20> 4A 4A 4A 26 24 08 4A 4A 4A 4A 4A 4A 24 03 4A 4A 4A 4A 4A 16 

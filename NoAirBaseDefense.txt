@@ -1,0 +1,9 @@
+MOD_NAME=No Air Base Defense
+AUTHOR=swfdelicious
+DESCRIPTION=Simply removes the logic to spawn Overseer UFOs that will lead to air base defense missions. Other Overseer missions (Command Overwatch, Infiltration) are unaffected. WARNING: Air base defenses are the most predictable way to see an Overseer. They have a 50% chance to occur each month, only happen in the first few days of the month, and can only occur in continents that have a Firestorm stationed at them during the previous council report. By installing this mod, you will be providing yourself less predictable and controllable opportunities to shoot down an Overseer.
+UPK_FILE = XComStrategyGame.upk
+
+OBJECT = XGStrategyAI.AddLateMission : AUTO
+[REPLACEMENT_CODE]
+/*(0x0000/0x0000)*/ 04 0B 
+/*(0x0002/0x0002)*/ 53 
